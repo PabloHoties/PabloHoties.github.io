@@ -1,0 +1,165 @@
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  display: block;
+}
+
+@font-face {
+  font-family: "Creato Display Bold";
+  src: url("/assets/fonts/CreatoDisplay-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Creato Display Medium";
+  src: url("/assets/fonts/CreatoDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.custom-navbar {
+  font-family: "Creato Display Bold", sans-serif;
+  background-color: #000000 !important;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+}
+
+.logo-container svg {
+  max-width: 11.25rem;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .logo-container svg {
+    max-width: 8.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-container svg {
+    max-width: 6.875rem;
+  }
+}
+
+.nav-link {
+  color: #fff !important;
+  font-size: 1.1rem;
+  text-decoration: none !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #fff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+.custom-menu {
+  display: none;
+  background-color: #111;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+}
+
+.custom-menu.show {
+  display: block;
+}
+
+.custom-menu .dropdown-item {
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: "Creato Display Medium", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-menu .dropdown-item:hover,
+.custom-menu .dropdown-item:focus {
+  background-color: #3b3b3b;
+  color: #fff;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.submenu-lateral {
+  background-color: #111 !important;
+  border: none;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+}
+
+.submenu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submenu-link::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.5rem;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid currentColor;
+}
+
+@media (min-width: 768px) {
+  .custom-navbar.nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .custom-navbar.nav-scrolled .custom-menu,
+  .custom-navbar.nav-scrolled .submenu-lateral {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .custom-dropdown:hover>.custom-menu {
+    display: block;
+  }
+
+  .submenu-lateral {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: none;
+  }
+
+  .dropdown-submenu:hover>.submenu-lateral {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  #navbarNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .submenu-lateral {
+    position: static;
+    display: none;
+  }
+
+  .submenu-lateral.show {
+    display: block;
+  }
+
+  .submenu-link::after {
+    border-top: 0.3em solid currentColor;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    margin-top: 0.15rem;
+  }
+}

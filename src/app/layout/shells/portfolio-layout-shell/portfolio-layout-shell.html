@@ -1,7 +1,13 @@
-<app-navbar></app-navbar>
+<div class="d-flex flex-column min-vh-100 bg-primary bg-gradient text-white">
 
-<main>
-  <router-outlet></router-outlet>
-</main>
+  <app-navbar>
+    <nav class="sticky-top"></nav>
+  </app-navbar>
 
-<app-footer></app-footer>
+  <div class="flex-fill">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
+
+</div>
