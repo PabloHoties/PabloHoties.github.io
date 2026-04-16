@@ -27,15 +27,6 @@ export class Navbar implements OnInit {
     this.isScrolled = window.scrollY > 20;
   }
 
-  onLogoClick() {
-    if (this.router.url === '/') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  }
-
   resetNavbar() {
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
