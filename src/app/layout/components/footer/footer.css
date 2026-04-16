@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Assistant SemiBold";
+  src: url("/assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.footer-padding {
+  padding-top: 0.7rem;
+  padding-bottom: 1.15rem;
+}
+
+.icon-link i {
+  color: #f1f1f1cc;
+  font-size: 1.15rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-link:hover i {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.custom-tooltip-balloon {
+  position: absolute;
+  bottom: 160%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+
+  width: 140px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+
+  background-color: rgba(88, 101, 242, 0.8);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 255, 255, 0.05);
+
+  color: #fff;
+  font-family: "Assistant SemiBold", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.custom-tooltip-balloon::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgba(88, 101, 242, 0.8) transparent transparent transparent;
+}
+
+.custom-tooltip-balloon.show-balloon {
+  opacity: 1;
+  visibility: visible;
+}
