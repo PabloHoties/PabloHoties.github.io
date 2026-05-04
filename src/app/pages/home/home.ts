@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { HeroSection } from "./sections/hero-section/hero-section";
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [HeroSection],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
