@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "Assistant SemiBold";
-  src: url("/assets/fonts/Assistant-SemiBold.ttf") format("truetype");
+  font-family: "Source Sans 3";
+  src: url("/assets/fonts/source-sans-3-v19-latin-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 .footer-padding {
@@ -38,7 +39,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 255, 255, 0.05);
 
   color: #fff;
-  font-family: "Assistant SemiBold", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   text-align: center;

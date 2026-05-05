@@ -6,21 +6,24 @@
 }
 
 @font-face {
-  font-family: "Creato Display Bold";
-  src: url("/assets/fonts/CreatoDisplay-Bold.otf") format("opentype");
+  font-family: "Creato Display";
+  src: url("/assets/fonts/CreatoDisplay-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Creato Display Medium";
-  src: url("/assets/fonts/CreatoDisplay-Medium.otf") format("opentype");
+  font-family: "Creato Display";
+  src: url("/assets/fonts/CreatoDisplay-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 .custom-navbar {
-  font-family: "Creato Display Bold", sans-serif;
+  font-family: "Creato Display", sans-serif;
+  font-weight: bold;
   background-color: #000000 !important;
   transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
 }
@@ -29,6 +32,10 @@
   max-width: 11.25rem;
   width: 100%;
   height: auto;
+}
+
+.logo-container svg text {
+  font-weight: normal; 
 }
 
 @media (max-width: 992px) {
@@ -70,7 +77,8 @@
 .custom-menu .dropdown-item {
   color: #fff;
   font-size: 0.95rem;
-  font-family: "Creato Display Medium", sans-serif;
+  font-family: "Creato Display", sans-serif;
+  font-weight: 500;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 

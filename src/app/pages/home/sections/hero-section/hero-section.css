@@ -75,7 +75,8 @@
   border-radius: 50px;
   background-color: #ffffff;
   color: #000000;
-  font-family: "Creato Display Bold", sans-serif;
+  font-family: "Creato Display", sans-serif;
+  font-weight: bold;
   font-size: 1.1rem;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
