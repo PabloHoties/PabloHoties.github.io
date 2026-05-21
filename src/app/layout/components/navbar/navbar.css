@@ -35,7 +35,7 @@
 }
 
 .logo-container svg text {
-  font-weight: normal; 
+  font-weight: normal;
 }
 
 @media (max-width: 992px) {
@@ -52,7 +52,7 @@
 
 .nav-link {
   color: #fff !important;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 0.6rem + 0.42vw, 1.6rem);
   text-decoration: none !important;
 }
 
@@ -76,7 +76,7 @@
 
 .custom-menu .dropdown-item {
   color: #fff;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 0.5rem + 0.38vw, 1.4rem);
   font-family: "Creato Display", sans-serif;
   font-weight: 500;
   transition: background-color 0.2s ease, color 0.2s ease;

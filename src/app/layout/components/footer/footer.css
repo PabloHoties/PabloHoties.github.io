@@ -7,13 +7,19 @@
 }
 
 .footer-padding {
-  padding-top: 0.7rem;
-  padding-bottom: 1.15rem;
+  padding-top: clamp(0.7rem, 0.5rem + 0.4vw, 1.5rem);
+  padding-bottom: clamp(1.15rem, 0.8rem + 0.6vw, 2.5rem);
+}
+
+footer.bg-dark p,
+footer.bg-dark a,
+footer.bg-dark strong {
+  font-size: clamp(0.85rem, 0.4rem + 0.45vw, 1.5rem) !important;
 }
 
 .icon-link i {
   color: #f1f1f1cc;
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 0.2rem + 0.83vw, 2.2rem) !important;
   transition: all 0.3s ease-in-out;
 }
 
@@ -29,8 +35,8 @@
   transform: translateX(-50%);
   z-index: 1050;
 
-  width: 140px;
-  padding: 0.5rem 0.75rem;
+  width: clamp(140px, 120px + 2vw, 200px);
+  padding: clamp(0.5rem, 0.4rem + 0.2vw, 0.8rem) clamp(0.75rem, 0.6rem + 0.3vw, 1.2rem);
   border-radius: 8px;
 
   background-color: rgba(88, 101, 242, 0.8);
@@ -40,7 +46,7 @@
 
   color: #fff;
   font-family: "Source Sans 3", sans-serif;
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 0.7rem + 0.2vw, 1.1rem);
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.3px;
