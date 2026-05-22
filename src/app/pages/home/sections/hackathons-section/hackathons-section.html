@@ -1,0 +1,86 @@
+<section class="custom-vh-85 position-relative overflow-hidden bg-white py-5 d-flex align-items-center" id="hackathons">
+
+  <div class="particles-container left-side">
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+  </div>
+
+  <div class="particles-container right-side">
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+    <div class="black-square"></div>
+  </div>
+
+  <div class="container position-relative">
+
+    <ng-template #cardGiom>
+      <a [routerLink]="['/hackathons/giom']"
+        class="hackathon-card d-block shadow rounded text-decoration-none text-white">
+        <video autoplay loop [muted]="true" playsinline class="bg-media"
+          src="assets/hackathon-giom-showcase.mp4"></video>
+        <div class="card-overlay d-flex flex-column justify-content-end custom-card-padding">
+          <span class="badge bg-primary align-self-start mb-2 custom-badge">Hackathon</span>
+          <h3 class="custom-card-title fw-bold mb-2">Coti Informática + Giom Tecnologia</h3>
+          <p class="mb-0 text-light opacity-75 custom-card-desc">Plataforma de gestão financeira que utiliza IA para
+            analisar fluxos bancários e gerar insights estratégicos para empresas.</p>
+        </div>
+      </a>
+    </ng-template>
+
+    <ng-template #cardVibetex>
+      <a [routerLink]="['/hackathons/vibetex']"
+        class="hackathon-card d-block shadow rounded text-decoration-none text-white">
+        <video autoplay loop [muted]="true" playsinline class="bg-media"
+          src="assets/hackathon-vibetex-showcase.mp4"></video>
+        <div class="card-overlay d-flex flex-column justify-content-end custom-card-padding">
+          <span class="badge bg-primary align-self-start mb-2 custom-badge">Hackathon</span>
+          <h3 class="custom-card-title fw-bold mb-2">Coti Informática + Vibetex</h3>
+          <p class="mb-0 text-light opacity-75 custom-card-desc">Sistema de controle de ponto digital com captura de
+            geolocalização para colaboradores e painel de monitoramento para gestores.</p>
+        </div>
+      </a>
+    </ng-template>
+
+    <div class="row justify-content-center g-5 d-none d-md-flex">
+
+      <div class="col-md-6">
+        <ng-container *ngTemplateOutlet="cardGiom"></ng-container>
+      </div>
+
+      <div class="col-md-6">
+        <ng-container *ngTemplateOutlet="cardVibetex"></ng-container>
+      </div>
+
+    </div>
+
+    <div id="hackathonsCarousel" class="carousel carousel-dark slide d-block d-md-none">
+
+      <div class="carousel-indicators mb-0" style="bottom: -10px;">
+        <button type="button" data-bs-target="#hackathonsCarousel" data-bs-slide-to="0" class="active"
+          aria-current="true"></button>
+        <button type="button" data-bs-target="#hackathonsCarousel" data-bs-slide-to="1"></button>
+      </div>
+
+      <div class="carousel-inner pb-4">
+
+        <div class="carousel-item active">
+          <ng-container *ngTemplateOutlet="cardGiom"></ng-container>
+        </div>
+
+        <div class="carousel-item">
+          <ng-container *ngTemplateOutlet="cardVibetex"></ng-container>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
