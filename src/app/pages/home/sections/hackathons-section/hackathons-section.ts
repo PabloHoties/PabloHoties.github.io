@@ -1,16 +1,38 @@
-import { NgTemplateOutlet, NgComponentOutlet } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { NgTemplateOutlet, CommonModule } from '@angular/common';
+import { AfterViewInit, Component, HostListener, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-hackathons-section',
-  imports: [RouterLink, NgTemplateOutlet],
+  imports: [CommonModule, RouterLink, NgTemplateOutlet],
   templateUrl: './hackathons-section.html',
   styleUrl: './hackathons-section.css',
 })
-export class HackathonsSection implements AfterViewInit {
+export class HackathonsSection implements OnInit, AfterViewInit {
+
+  isDesktop = signal(false);
+
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    const isNowDesktop = window.innerWidth >= 768;
+    const wasDesktop = this.isDesktop();
+
+    this.isDesktop.set(isNowDesktop);
+
+    if (wasDesktop && !isNowDesktop) {
+      setTimeout(() => this.iniciarCarrossel(), 0);
+    }
+  }
 
   ngAfterViewInit(): void {
     this.iniciarCarrossel();

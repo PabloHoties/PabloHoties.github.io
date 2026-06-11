@@ -48,7 +48,8 @@
       </a>
     </ng-template>
 
-    <div class="row justify-content-center g-5 d-none d-md-flex">
+    @if (isDesktop()) {
+    <div class="row justify-content-center g-5">
 
       <div class="col-md-6">
         <ng-container *ngTemplateOutlet="cardGiom"></ng-container>
@@ -60,7 +61,8 @@
 
     </div>
 
-    <div id="hackathonsCarousel" class="carousel carousel-dark slide d-block d-md-none">
+    } @else {
+    <div id="hackathonsCarousel" class="carousel carousel-dark slide">
 
       <div class="carousel-indicators mb-0" style="bottom: -10px;">
         <button type="button" data-bs-target="#hackathonsCarousel" data-bs-slide-to="0" class="active"
@@ -81,6 +83,7 @@
       </div>
 
     </div>
+    }
 
   </div>
 </section>
