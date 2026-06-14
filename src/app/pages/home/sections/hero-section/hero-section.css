@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  min-height: calc(100dvh - 74.9167px);
+  min-height: calc(100svh - 74.9167px);
   overflow: hidden;
   background: linear-gradient(-45deg, #000000, #002244, #004d40, #000000);
   background-size: 400% 400%;
@@ -25,7 +25,8 @@
   opacity: 0.04;
   pointer-events: none;
   z-index: 0;
-
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .content-side {
@@ -36,6 +37,7 @@
   justify-content: center;
   padding: 0 clamp(1.5rem, 4vw, 5rem);
   z-index: 2;
+  container-type: inline-size;
 }
 
 .portrait-side {
@@ -52,12 +54,11 @@
   display: block;
   max-width: 100%;
   height: auto;
-  max-height: min(85dvh, calc(100dvh - 74.9167px));
+  max-height: min(85svh, calc(100svh - 74.9167px));
 }
 
 .about-text {
   max-width: clamp(500px, 45vw, 1200px);
-  margin-bottom: clamp(1.5rem, 1rem + 1vw, 3rem);
   color: #ffffff;
   font-size: clamp(1rem, 0.5rem + 0.83vw, 2.5rem);
   line-height: 1.6;
@@ -72,15 +73,14 @@
   box-sizing: border-box;
   padding: clamp(0.9rem, 0.6rem + 0.3vw, 1.3rem) clamp(1.5rem, 1.2rem + 1.5vw, 4.8rem);
   border: clamp(2px, 0.1vw + 1px, 3px) solid #ffffff;
-  border-radius: 50px;
+  border-radius: 999px;
   background-color: #ffffff;
   color: #000000;
   font-family: "Creato Display", sans-serif;
   font-weight: bold;
   font-size: clamp(0.95rem, 0.6rem + 0.6vw, 1.9rem);
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  margin-top: 1rem;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn-custom:hover {
@@ -121,21 +121,40 @@
   }
 }
 
+@media (min-width: 1450px) {
+  .content-side {
+    gap: 1.5cqw;
+  }
+
+  .about-text {
+    margin-bottom: 0; 
+    font-size: 2,8cqw;
+    max-width: 94cqw; 
+  }
+
+  .btn-custom {
+    margin-top: 0; 
+    font-size: 2.3cqw;
+    padding: 1.7cqw 5.3cqw;
+    border-width: 0.3cqw;
+  }
+}
+
 @media (max-width: 992px) {
   .fullscreen-section {
-    min-height: calc(100dvh - 64.05px);
+    min-height: calc(100svh - 64.05px);
   }
 
   .portrait-side picture,
   .portrait-image {
-    max-height: min(85dvh, calc(100dvh - 64.05px));
+    max-height: min(85svh, calc(100svh - 64.05px));
   }
 }
 
-@media (max-width: 690px) and (orientation: portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
   .fullscreen-section {
     flex-direction: column;
-    height: calc(100dvh - 64.05px);
+    height: calc(100svh - 64.05px);
   }
 
   .content-side {
@@ -168,11 +187,11 @@
 
 @media (max-width: 576px) {
   .fullscreen-section {
-    min-height: calc(100dvh - 57.8px);
+    min-height: calc(100svh - 57.8px);
   }
 
   .portrait-side picture,
   .portrait-image {
-    max-height: min(85dvh, calc(100dvh - 57.8px));
+    max-height: min(85svh, calc(100svh - 57.8px));
   }
 }

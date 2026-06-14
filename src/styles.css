@@ -3,3 +3,7 @@
 :root {
   --bs-body-font-family: 'Segoe UI', 'Roboto Flex Variable', sans-serif;
 }
+
+html {
+  scroll-behavior: auto !important;
+}

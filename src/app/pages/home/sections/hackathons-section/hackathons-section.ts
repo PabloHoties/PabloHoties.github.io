@@ -24,12 +24,16 @@ export class HackathonsSection implements OnInit, AfterViewInit {
   }
 
   private checkScreenSize() {
-    const isNowDesktop = window.innerWidth >= 768;
-    const wasDesktop = this.isDesktop();
+    const isDesktopWidth = window.matchMedia('(min-width: 768px)').matches;
 
-    this.isDesktop.set(isNowDesktop);
+    const isMobileLandscape = window.matchMedia('(max-height: 500px) and (orientation: landscape)').matches;
 
-    if (wasDesktop && !isNowDesktop) {
+    const shouldShowGrid = isDesktopWidth || isMobileLandscape;
+    const wasShowingGrid = this.isDesktop();
+
+    this.isDesktop.set(shouldShowGrid);
+
+    if (wasShowingGrid && !shouldShowGrid) {
       setTimeout(() => this.iniciarCarrossel(), 0);
     }
   }
