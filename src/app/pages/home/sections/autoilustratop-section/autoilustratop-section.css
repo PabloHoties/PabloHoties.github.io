@@ -1,0 +1,172 @@
+@font-face {
+  font-family: 'Moderna';
+  src: url('/assets/fonts/Moderna.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.custom-vh-85 {
+  min-height: 85svh;
+}
+
+.custom-background {
+  background: linear-gradient(#8000aa, #480075, #200050);
+}
+
+.left-cq-container {
+  container-type: inline-size;
+}
+
+.custom-logo {
+  width: clamp(50px, 2vw + 25px, 70px);
+  height: auto;
+}
+
+
+.custom-title {
+  font-family: 'Moderna', sans-serif;
+  font-size: clamp(2rem, 2vw + 0.8rem, 3.2rem);
+  letter-spacing: 1px;
+}
+
+
+.custom-description {
+  margin-bottom: clamp(1.5rem, 1rem + 1vw, 3rem);
+  font-size: clamp(1rem, 0.5rem + 0.83vw, 2.5rem);
+  line-height: 1.5;
+}
+
+
+.btn-custom {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 1rem;
+  padding: clamp(0.9rem, 0.6rem + 0.3vw, 1.3rem) clamp(1.5rem, 1.2rem + 1.5vw, 4.8rem);
+  border: clamp(2px, 0.1vw + 1px, 3px) solid #ffffff;
+  border-radius: 999px;
+
+  font-family: "Creato Display", sans-serif;
+  font-size: clamp(0.95rem, 0.6rem + 0.6vw, 1.9rem);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: #ffffff;
+  color: #000000;
+  mix-blend-mode: screen;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+.btn-custom:hover {
+  background-color: transparent;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}
+
+.soft-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.thymeleaf-soft {
+  background-color: rgba(0, 105, 16, 0.15);
+  color: #00a018;
+}
+
+.thymeleaf-soft svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.videoscribe-soft {
+  background-color: rgba(0, 65, 80, 0.15);
+  color: #28a9cc;
+}
+
+.videoscribe-soft svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.mobile-scrolling-viewport {
+  width: 100%;
+  max-width: 375px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.custom-panel-img {
+  width: 100%;
+}
+
+@keyframes mobileScroll {
+
+  0%,
+  10% {
+    transform: translateY(0%);
+  }
+
+  90%,
+  100% {
+    transform: translateY(calc(-100% + ((667 / 1108) * 100%)));
+  }
+}
+
+@media (min-width: 1200px) {
+  .left-cq-container {
+    aspect-ratio: 16 / 9;
+    gap: 1.5cqw;
+  }
+
+  .custom-logo {
+    width: 7cqw;
+  }
+
+  .custom-title {
+    font-size: 5.6cqw;
+  }
+
+  .custom-description {
+    font-size: 2.6cqw;
+  }
+
+  .btn-custom {
+    margin-top: 0; 
+    font-size: 2.3cqw;
+    padding: 1.7cqw 5.3cqw;
+    border-width: 0.3cqw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mobile-scrolling-viewport {
+    aspect-ratio: 375 / 667;
+  }
+
+  .custom-panel-img {
+    animation: mobileScroll 8s ease-in-out infinite alternate;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-scrolling-viewport {
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .custom-panel-img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    animation: none;
+  }
+}
