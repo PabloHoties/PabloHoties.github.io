@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark custom-navbar" [class.nav-scrolled]="isScrolled">
   <div class="container-fluid">
 
-    <a class="navbar-brand ms-lg-4 ms-md-3 ms-1" routerLink="/" style="cursor: pointer;">
+    <a class="navbar-brand ms-lg-4 ms-md-3 ms-1" routerLink="/" (click)="onNavClick($event, '/')" style="cursor: pointer;">
+      <span class="visually-hidden">Pablo Hoties</span>
       <div class="logo-container">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
           viewBox="0 0 666 181" preserveAspectRatio="xMidYMid meet">
@@ -156,23 +157,23 @@
                 aria-expanded="false">Hackathons</a>
 
               <ul class="dropdown-menu submenu-lateral">
-                <li><a class="dropdown-item" routerLink="/hackathons/giom">Giom Tecnologia</a></li>
-                <li><a class="dropdown-item" routerLink="/hackathons/vibetex">Vibetex</a></li>
+                <li><a class="dropdown-item" routerLink="/hackathons/giom" (click)="onNavClick($event, '/hackathons/giom')">Giom Tecnologia</a></li>
+                <li><a class="dropdown-item" routerLink="/hackathons/vibetex" (click)="onNavClick($event, '/hackathons/vibetex')">Vibetex</a></li>
               </ul>
             </li>
 
             <li>
-              <a class="dropdown-item" routerLink="/autoilustratop">AutoIlustraTop</a>
+              <a class="dropdown-item" routerLink="/autoilustratop" (click)="onNavClick($event, '/autoilustratop')">AutoIlustraTop</a>
             </li>
           </ul>
         </li>
 
         <li class="nav-item mx-lg-3">
-          <a class="nav-link" routerLink="/about">Sobre Mim</a>
+          <a class="nav-link" routerLink="/about" (click)="onNavClick($event, '/about')">Sobre Mim</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contato</a>
+          <a class="nav-link" routerLink="/" fragment="contact" (click)="onNavClick($event, '/', 'contact')">Contato</a>
         </li>
 
       </ul>
