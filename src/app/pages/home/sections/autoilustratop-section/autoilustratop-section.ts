@@ -37,7 +37,7 @@ export class AutoilustratopSection implements OnDestroy {
 
   animarContador() {
     const valorInicial = 1000000;
-    const valorFinal = 1900000;
+    const valorFinal = 2100000;
     const duracao = 2000;
     let tempoInicio: number | null = null;
 
@@ -58,8 +58,8 @@ export class AutoilustratopSection implements OnDestroy {
         if (progresso < 1) {
           window.requestAnimationFrame(passo);
         } else {
-          if (this.visualizacoesFormatadas !== '1,9') {
-            this.visualizacoesFormatadas = '1,9';
+          if (this.visualizacoesFormatadas !== '2,1') {
+            this.visualizacoesFormatadas = '2,1';
             this.cdr.detectChanges();
           }
         }

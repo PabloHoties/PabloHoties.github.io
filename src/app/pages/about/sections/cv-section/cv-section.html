@@ -1,0 +1,49 @@
+<section class="glass-table-section container-fluid py-5 d-flex justify-content-center">
+  <div class="position-relative w-100 cv-scalable-wrapper">
+
+    <div class="position-absolute d-flex btn-container-cv">
+      <a href="https://docs.google.com/document/d/1tGF4VUGneJ6v_qc8wQKa2e4qGPpGJqBA-i1bBOjUf7I/export?format=docx"
+        title="Baixar Currículo em Word"
+        class="btn btn-dark shadow rounded-circle d-flex align-items-center justify-content-center btn-flutuante-cv">
+        <i class="fa-solid fa-file-word" style="color: #74b9ff;"></i>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1tGF4VUGneJ6v_qc8wQKa2e4qGPpGJqBA-i1bBOjUf7I/export?format=pdf"
+        title="Baixar Currículo em PDF"
+        class="btn btn-dark shadow rounded-circle d-flex align-items-center justify-content-center btn-flutuante-cv">
+        <i class="fa-solid fa-file-pdf" style="color: #ff7675;"></i>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1tGF4VUGneJ6v_qc8wQKa2e4qGPpGJqBA-i1bBOjUf7I/edit?usp=sharing"
+        target="_blank" title="Abrir em nova aba"
+        class="btn btn-dark shadow rounded-circle d-flex align-items-center justify-content-center btn-flutuante-cv">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <div class="resume-wrapper" [class.no-paper-stack]="isFirefoxMobile">
+
+      <div class="resume-cropper position-relative">
+
+        <svg viewBox="0 0 794 1150" class="responsive-svg" xmlns="http://www.w3.org/2000/svg">
+          <foreignObject width="794" height="1150">
+
+            @if (isFirefoxMobile) {
+            <iframe src="https://drive.google.com/file/d/1tGF4VUGneJ6v_qc8wQKa2e4qGPpGJqBA-i1bBOjUf7I/preview"
+              class="resume-iframe" style="border: none;">
+            </iframe>
+            } @else {
+            <iframe
+              src="https://docs.google.com/document/d/e/2PACX-1vRbqQUf3nHZlTRVverBpAxArZD1cZSrDJmKfamhavdho5r6l_SXVls1FoTjXkNpL_t3MtLPWuqrMe5y/pub?embedded=true"
+              class="resume-iframe" scrolling="no" style="border: none;">
+            </iframe>
+            }
+
+          </foreignObject>
+        </svg>
+
+      </div>
+    </div>
+
+  </div>
+</section>

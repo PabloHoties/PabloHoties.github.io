@@ -1,0 +1,174 @@
+.glass-table-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f5f7;
+  container-type: inline-size;
+}
+
+.glass-table-section::before {
+  content: "";
+  position: absolute;
+  top: min(-30px, -1.562vw);
+  left: min(-30px, -1.562vw);
+  right: min(-30px, -1.562vw);
+  bottom: min(-30px, -1.562vw);
+  z-index: 1;
+
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, #ffffff 0%, #e2e8f0 100%);
+  
+  background-size: max(150px, 7.812vw) max(150px, 7.812vw), 
+                   max(150px, 7.812vw) max(150px, 7.812vw), 
+                   100% 100%;
+
+  filter: blur(max(16px, 0.833vw));
+  opacity: 0.95;
+}
+
+.glass-table-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(130deg, transparent 20%, rgba(255, 255, 255, 0.4) 22%, rgba(255, 255, 255, 0.6) 24%, transparent 26%),
+    linear-gradient(130deg, transparent 65%, rgba(255, 255, 255, 0.25) 67%, transparent 69%),
+    radial-gradient(circle at 50% 50%, rgba(220, 240, 255, 0.2) 0%, rgba(135, 195, 235, 0.45) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='glass-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23glass-noise)' opacity='0.03'/%3E%3C/svg%3E");
+
+  background-size: 100% 100%, 100% 100%, 100% 100%, max(150px, 7.812vw) max(150px, 7.812vw);
+
+  box-shadow: inset 0 0 max(80px, 4.166vw) rgba(10, 60, 100, 0.15);
+}
+
+
+.cv-scalable-wrapper {
+  max-width: max(794px, 41.354vw);
+}
+
+.resume-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: max(794px, 41.354vw);
+  margin: max(2.5rem, 2.083vw) auto;
+  z-index: 3;
+}
+
+
+.resume-wrapper::before,
+.resume-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  border: 1px solid #d1d5db;
+  border-radius: max(2px, 0.1vw);
+  
+  box-shadow: 0 max(8px, 0.416vw) max(24px, 1.25vw) rgba(0, 0, 0, 0.12);
+}
+
+.resume-wrapper::before {
+  z-index: -2;
+  transform: rotate(-3deg) translate(min(-12px, -0.625vw), max(8px, 0.416vw));
+}
+
+.resume-wrapper::after {
+  z-index: -1;
+  transform: rotate(2deg) translate(max(10px, 0.52vw), min(-6px, -0.312vw));
+}
+
+.resume-wrapper.no-paper-stack::before,
+.resume-wrapper.no-paper-stack::after {
+  display: none !important;
+}
+
+.resume-wrapper.no-paper-stack .resume-cropper {
+  border: none;
+  background-color: transparent;
+}
+
+
+.resume-cropper {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: max(3px, 0.156vw);
+  
+  box-shadow: 
+    0 max(15px, 0.781vw) max(35px, 1.822vw) rgba(0, 0, 0, 0.18), 
+    0 max(5px, 0.26vw) max(15px, 0.781vw) rgba(0, 0, 0, 0.08);
+}
+
+.responsive-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.resume-iframe {
+  width: 794px;
+  height: 1150px;
+  border: none;
+  overflow: hidden;
+}
+
+
+.btn-container-cv {
+  z-index: 10;
+  gap: max(0.5rem, 0.416vw); 
+  bottom: calc(max(25px, 1.302vw) + max(2.5rem, 2.083vw)); 
+  right: max(40px, 2.083vw);
+}
+
+.btn-flutuante-cv {
+  width: max(45px, 2.343vw);
+  height: max(45px, 2.343vw);
+}
+
+.btn-flutuante-cv i {
+  font-size: max(1rem, 0.833vw); 
+}
+
+
+@media (max-width: 767px) {
+  .resume-wrapper {
+    overflow: auto;
+    max-height: 75svh;
+    -webkit-overflow-scrolling: touch;
+    background-color: #ffffff;
+    margin: 1rem auto;
+  }
+
+  .resume-wrapper::before,
+  .resume-wrapper::after {
+    display: none;
+  }
+
+  .resume-cropper {
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .responsive-svg {
+    width: 130.43%;
+    min-width: 130.43%;
+    margin-left: -15.22%;
+  }
+
+  .btn-container-cv {
+    bottom: calc(15px + 1rem); 
+    right: 15px;
+    gap: 0.5rem;
+  }
+}
