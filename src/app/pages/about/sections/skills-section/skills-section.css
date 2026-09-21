@@ -1,0 +1,148 @@
+.custom-vh-80 {
+  min-height: 80svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-anchor: none;
+  container-type: inline-size;
+}
+
+.custom-background {
+  background-color: #3e2723; 
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='wood'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.01 0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23wood)' opacity='0.4'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 50%, rgba(139, 90, 43, 0.15) 0%, transparent 70%),
+    linear-gradient(to right, #25140b 0%, #4a2e1b 15%, #634226 50%, #4a2e1b 85%, #25140b 100%);
+  background-size: 100vw 100vh, 100% 100%, 100% 100%;
+  background-blend-mode: multiply, normal, normal;
+}
+
+.skill-card {
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(129, 199, 132, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(165, 214, 167, 0.3) !important;
+  
+  border-radius: max(32px, 1.666vw) max(8px, 0.416vw) max(32px, 1.666vw) max(8px, 0.416vw) !important; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(129, 199, 132, 0.18) 0%, rgba(255, 255, 255, 0.07) 100%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28) !important;
+}
+
+.skill-card .card-title {
+  font-size: clamp(1.2rem, 1.5vw, max(1.5rem, 1.25vw));
+}
+
+.skill-card .card-body {
+  padding: max(1.25rem, 1.041vw);
+}
+
+.skill-card .mb-3 {
+  margin-bottom: max(1rem, 0.833vw) !important;
+}
+
+.skill-card .mb-2 {
+  margin-bottom: max(0.5rem, 0.416vw) !important;
+}
+
+.expandable-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease-out;
+}
+
+.expandable-wrapper.is-expanded {
+  grid-template-rows: 1fr;
+}
+
+.expandable-content {
+  overflow: hidden;
+}
+
+.expandable-content li:last-child {
+  border-bottom: none !important;
+}
+
+.custom-list .border-bottom {
+  border-color: #f1f3f5 !important;
+  font-size: max(0.95rem, 0.791vw);
+}
+
+.custom-bullet {
+  position: relative;
+  padding-left: max(1.25rem, 1.041vw);
+  font-size: clamp(0.85rem, 1.2vw, max(0.95rem, 0.791vw));
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.custom-bullet::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: -0.1em; 
+  color: #81c784; 
+  font-size: max(1.4rem, 1.16vw);
+  line-height: 1;
+}
+
+.action-text {
+  color: #a5d6a7 !important;
+  cursor: pointer;
+  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+  font-size: max(0.875rem, 0.729vw);
+}
+
+.skill-card:hover .action-text {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(165, 214, 167, 0.4);
+}
+
+.custom-divider {
+  border-color: rgba(255, 255, 255, 0.2) !important; 
+  border-width: 1px;
+  opacity: 1 !important; 
+}
+
+.custom-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-top: max(1rem, 0.833vw) !important;
+  padding-bottom: max(1rem, 0.833vw) !important;
+}
+
+@container (min-width: 1921px) {
+  .skills-scalable-container {
+    max-width: 68.75cqw; 
+  }
+
+  .skills-scalable-container .row {
+    --bs-gutter-x: max(1.5rem, 1.25vw);
+    --bs-gutter-y: max(1.5rem, 1.25vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-background {
+    background-image: 
+      radial-gradient(ellipse at 50% 50%, rgba(139, 90, 43, 0.15) 0%, transparent 70%),
+      linear-gradient(to right, #25140b 0%, #4a2e1b 15%, #634226 50%, #4a2e1b 85%, #25140b 100%);
+    background-blend-mode: normal;
+  }
+
+  .skill-card {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,46 @@
+<section class="custom-vh-80 custom-background">
+  <div class="container skills-scalable-container py-5">
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-items-start justify-content-center">
+
+      @for (category of skills; track category.title) {
+      <div class="col">
+        <div class="card h-100 skill-card" (click)="toggleExpand(category)">
+
+          <div class="card-body">
+            <h4 class="card-title mb-3 fw-semibold">{{ category.title }}</h4>
+
+            <hr class="custom-divider m-0 mb-3">
+
+            <ul class="list-unstyled m-0 custom-list">
+              @for (item of category.items | slice:0:3; track item) {
+              <li class="custom-bullet mb-2">
+                {{ item }}
+              </li>
+              }
+
+              <div class="expandable-wrapper" [class.is-expanded]="category.expanded">
+                <div class="expandable-content">
+                  @for (item of category.items | slice:3; track item) {
+                  <li class="custom-bullet mb-2">
+                    {{ item }}
+                  </li>
+                  }
+                </div>
+              </div>
+            </ul>
+          </div>
+
+          <div class="card-footer text-center pb-3 pt-3 custom-footer">
+            <span class="fw-medium small action-text">
+              {{ category.expanded ? 'Ver menos' : 'Ver mais (+' + (category.items.length - 3) + ')' }}
+            </span>
+          </div>
+
+        </div>
+      </div>
+      }
+
+    </div>
+  </div>
+</section>
