@@ -1,0 +1,45 @@
+<section class="custom-vh-85 position-relative overflow-hidden bg-white py-5 d-flex align-items-center"
+  id="certificates">
+
+  <div class="container certificates-scalable-container position-relative">
+
+    <div id="certificatesCarousel" class="carousel carousel-dark slide">
+
+      <div class="carousel-indicators mb-0">
+        @for (cert of certificatesList; track cert.id; let i = $index) {
+        <button type="button" data-bs-target="#certificatesCarousel" [attr.data-bs-slide-to]="i"
+          [class.active]="i === activeIndex" [attr.aria-current]="i === activeIndex ? 'true' : null">
+        </button>
+        }
+      </div>
+
+      <div class="carousel-inner">
+        @for (cert of certificatesList; track cert.id; let i = $index) {
+
+        <div class="carousel-item" [class.active]="i === activeIndex" [class.is-center]="i === activeIndex"
+          [class.is-left]="isPrev(i)" [class.is-right]="isNext(i)">
+
+          <div class="certificate-wrapper">
+            <img [src]="cert.imageUrl" [alt]="cert.altText">
+          </div>
+
+        </div>
+        }
+      </div>
+
+      <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#certificatesCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+
+      <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#certificatesCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
