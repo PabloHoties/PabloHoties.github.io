@@ -21,6 +21,11 @@
 
 .bio-title {
   font-size: clamp(1.8rem, 8cqw, max(3.5rem, 2.916vw));
+  margin-bottom: max(1.5rem, 1.25vw);
+
+  @media (max-width: 991.98px) {
+    font-size: clamp(1.8rem, 8cqw, 2.5rem);
+  }
 
   @media (min-width: 992px) {
     white-space: nowrap;
@@ -34,7 +39,16 @@
   p {
     font-size: clamp(1.15rem, 2vw, max(1.3rem, 1.083vw));
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: max(1.5rem, 1.25vw);
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      font-size: 1.075rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    text-align: justify;
+    hyphens: auto;
   }
 
   @media (min-width: 992px) {
