@@ -38,6 +38,7 @@
   padding: 0 clamp(1.5rem, 4vw, 5rem);
   z-index: 2;
   container-type: inline-size;
+  --hero-text-size: clamp(1rem, 0.5rem + 0.83vw, 2.5rem);
 }
 
 .portrait-side {
@@ -60,7 +61,7 @@
 .about-text {
   max-width: clamp(500px, 45vw, 1200px);
   color: #ffffff;
-  font-size: clamp(1rem, 0.5rem + 0.83vw, 2.5rem);
+  font-size: var(--hero-text-size);
   line-height: 1.6;
   text-align: center;
 }
@@ -121,22 +122,25 @@
   }
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 768px) {
   .content-side {
-    gap: 1.5cqw;
+    gap: calc(var(--hero-text-size) * 1.2032);
   }
 
   .about-text {
-    margin-bottom: 0; 
-    font-size: 2,8cqw;
-    max-width: 94cqw; 
+    margin-bottom: 0;
   }
 
   .btn-custom {
-    margin-top: 0; 
-    font-size: 2.3cqw;
-    padding: 1.7cqw 5.3cqw;
-    border-width: 0.3cqw;
+    font-size: calc(var(--hero-text-size) * 0.8414);
+    padding: 0.7392em 2.3045em;
+    border-width: 0.1304em;
+  }
+}
+
+@media (min-width: 1450px) {
+  .about-text {
+    max-width: 94cqw;
   }
 }
 
@@ -169,6 +173,28 @@
   .portrait-image {
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+}
+
+@media (min-width: 1921px) {
+  .content-side {
+    padding: 0 4vw;
+    --hero-text-size: 1.2467vw;
+  }
+
+  .soft-badge {
+    border-radius: 0.2083vw;
+  }
+
+  .portrait-side picture,
+  .portrait-image {
+    height: min(85svh, calc(100svh - var(--navbar-height)));
+  }
+
+  .portrait-image {
+    width: auto;
     object-fit: contain;
     object-position: bottom center;
   }
