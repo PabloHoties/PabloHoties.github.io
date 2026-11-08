@@ -1,5 +1,5 @@
 .fullscreen-section {
-  min-height: calc(100svh - 74.9167px);
+  min-height: calc(100svh - var(--navbar-height));
   container-type: inline-size;
 }
 

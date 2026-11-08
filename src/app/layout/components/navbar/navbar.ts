@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { afterNextRender, Component, DestroyRef, ElementRef, HostListener, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { filter } from 'rxjs';
@@ -13,13 +13,33 @@ export class Navbar {
 
   isScrolled = false;
 
+  private navbarHeight = 0;
+
   constructor(public router: Router) {
+    const host = inject(ElementRef<HTMLElement>).nativeElement;
+    const destroyRef = inject(DestroyRef);
+
+    afterNextRender(() => {
+      this.updateNavbarHeight(host.getBoundingClientRect().height);
+
+      const observer = new ResizeObserver(([entry]) => {
+        this.updateNavbarHeight(entry.borderBoxSize[0].blockSize);
+      });
+      observer.observe(host);
+      destroyRef.onDestroy(() => observer.disconnect());
+    });
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       takeUntilDestroyed()
     ).subscribe(() => {
       this.resetNavbar();
     });
+  }
+  
+  private updateNavbarHeight(height: number) {
+    this.navbarHeight = height;
+    document.documentElement.style.setProperty('--navbar-height', `${height}px`);
   }
 
   @HostListener('window:scroll', [])
@@ -74,7 +94,7 @@ export class Navbar {
   private scrollToElement(id: string) {
     const element = document.getElementById(id);
     if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 57;
+      const y = element.getBoundingClientRect().top + window.scrollY - this.navbarHeight;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   }

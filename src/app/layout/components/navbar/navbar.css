@@ -174,3 +174,67 @@
     margin-top: 0.15rem;
   }
 }
+
+@media (min-width: 1921px) {
+  .custom-navbar {
+    --bs-navbar-padding-y: 0.4167vw;
+    --bs-navbar-brand-padding-y: 0.2604vw;
+    --bs-navbar-brand-margin-end: 0.8333vw;
+    --bs-navbar-nav-link-padding-x: 0.4167vw;
+  }
+
+  .container-fluid {
+    --bs-gutter-x: 1.25vw;
+  }
+
+  .navbar-brand.ms-lg-4 {
+    margin-left: 1.25vw !important;
+  }
+
+  .logo-container svg {
+    width: 9.375vw;
+    max-width: none;
+  }
+
+  #navbarNav.pe-lg-5 {
+    padding-right: 2.5vw !important;
+  }
+
+  .navbar-nav {
+    --bs-nav-link-padding-y: 0.4167vw;
+  }
+
+  .nav-item.mx-lg-3 {
+    margin-right: 0.8333vw !important;
+    margin-left: 0.8333vw !important;
+  }
+
+  .nav-link {
+    font-size: 0.92vw;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    text-underline-offset: 0.2604vw;
+    text-decoration-thickness: 0.1042vw;
+  }
+
+  .custom-menu,
+  .submenu-lateral {
+    --bs-dropdown-min-width: 8.3333vw;
+    --bs-dropdown-padding-y: 0.4167vw;
+    --bs-dropdown-spacer: 0.1042vw;
+    --bs-dropdown-border-radius: 0.3125vw;
+    --bs-dropdown-border-width: 0.0521vw;
+    --bs-dropdown-item-padding-x: 0.8333vw;
+    --bs-dropdown-item-padding-y: 0.2083vw;
+  }
+
+  .custom-menu .dropdown-item {
+    font-size: 0.7967vw;
+  }
+
+  .submenu-link::after {
+    margin-left: 0.4167vw;
+  }
+}

@@ -2,6 +2,7 @@
 
 :root {
   --bs-body-font-family: 'Segoe UI', 'Roboto Flex Variable', sans-serif;
+  --navbar-height: 74.9167px;
 }
 
 html {
